@@ -33,6 +33,7 @@ class _MyQuestionsState extends State<MyQuestions> {
   List<dynamic>userQueries=[];
   bool dataRecieved=false;
   bool hasConnection=true;
+  bool progress=false;
 
   Future<void> checkConnection() async {
     bool result = await InternetConnectionChecker().hasConnection;
@@ -80,6 +81,10 @@ class _MyQuestionsState extends State<MyQuestions> {
               child: Text("Cancel")),
           TextButton(onPressed:() async{
             try{
+              setState(() {
+                progress=true;
+              });
+              Navigator.pop(context);
               await _firestore.collection('Post_Info').doc(userQueries[index].id).delete();
 
               print("----------Post deleted now moving to comments---------");
@@ -106,9 +111,9 @@ class _MyQuestionsState extends State<MyQuestions> {
               print("----------Post deleted now moving to comments---------");
               setState(() {
                 userQueries.removeAt(index);
+                progress=false;
               });
-              
-              Navigator.pop(context);
+
               Fluttertoast.showToast(
                 msg: "Post deleted successfully.",
                 toastLength: Toast.LENGTH_LONG,
@@ -304,6 +309,21 @@ class _MyQuestionsState extends State<MyQuestions> {
                       itemCount: userQueries.length),
 
           ),
+          (progress)?Container(
+            height: double.infinity,
+            width: double.infinity,
+            color: themeNotifier.isDarkTheme ? Colors.black54 : Colors
+                .white60,
+          ): Container(),
+          (progress)?Center(
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 30),
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(Color(0xff00cfd8)),
+                strokeWidth: 3,
+              ),
+            ),
+          ):Container(),
           !hasConnection?
           Container(
             height: double.infinity,

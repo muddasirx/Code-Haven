@@ -50,18 +50,18 @@ class _NotificationsState extends State<Notifications> {
       notifications = querySnapshot.docs;
       notifications=notifications.reversed.toList();
 
-      print(notifications[0]['notification']);
-
-      for(int i=0;i< notifications.length;i++){
-        QuerySnapshot querySnapshot = await FirebaseFirestore.instance
-            .collection('Post_Info')
-            .where(FieldPath.documentId, isEqualTo: notifications[i]['postID'])
-            .get();
-        setState(() {
-          print("postID of queryFetched : ${querySnapshot.docs.first.id}");
-          posts.add(querySnapshot.docs.first);
-          print("post ID of index ${i} : ${posts[i].id}");
-        });
+      if(notifications.isNotEmpty){
+        for(int i=0;i< notifications.length;i++){
+          QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+              .collection('Post_Info')
+              .where(FieldPath.documentId, isEqualTo: notifications[i]['postID'])
+              .get();
+          setState(() {
+            print("postID of queryFetched : ${querySnapshot.docs.first.id}");
+            posts.add(querySnapshot.docs.first);
+            print("post ID of index ${i} : ${posts[i].id}");
+          });
+        }
       }
       setState(() {
         dataRecieved=true;

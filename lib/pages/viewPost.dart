@@ -770,7 +770,7 @@ class _viewPostState extends State<viewPost> {
                         decoration: InputDecoration(
                             contentPadding: EdgeInsets.only(top:12,left: 10),
                             hintText: (!replyPressed)?"Add a comment...":"",
-                            hintStyle: TextStyle(fontSize: 16),
+                            hintStyle: TextStyle(fontSize: 16,color: Colors.grey),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: themeNotifier.isDarkTheme ? Colors.white54 : Colors.black54),
                             ),
