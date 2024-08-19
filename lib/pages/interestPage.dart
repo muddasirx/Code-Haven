@@ -170,6 +170,9 @@ class selectInterstsState extends State<selectIntersts> {
                 controller: _controller,
                 decoration: InputDecoration(
                   hintText: "eg. Java, git, react, docker",
+                  hintStyle: TextStyle(
+                      color: Colors.grey
+                  ),
                   labelText: 'Search tags',
                     labelStyle: GoogleFonts.lato(
                         textStyle:TextStyle(

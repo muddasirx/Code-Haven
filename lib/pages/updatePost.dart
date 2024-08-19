@@ -509,6 +509,9 @@ class _updateQuestionState extends State<updateQuestion> {
                               left: 18, right: 2, top: 18, bottom: 18),
                           labelText: "Code",
                           hintText: "(optional)",
+                          hintStyle: TextStyle(
+                              color: Colors.grey
+                          ),
                           labelStyle: GoogleFonts.lato(
                               textStyle: TextStyle(
                                 color: themeNotifier.isDarkTheme ? Color(
@@ -740,6 +743,9 @@ class _updateQuestionState extends State<updateQuestion> {
                                       ),
                                     ),
                                     hintText: "Search tags related to your post",
+                                    hintStyle: TextStyle(
+                                        color: Colors.grey
+                                    ),
                                   ),
                                 ),
                             suggestionsCallback: (pattern) {

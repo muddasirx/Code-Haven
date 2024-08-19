@@ -439,6 +439,7 @@ class _MyProfileState extends State<MyProfile> {
                         labelText: "GitHub",
                         hintText: "account link",
                         hintStyle: TextStyle(
+                          color: Colors.grey,
                           fontSize: 16,
                         ),
                         labelStyle:
@@ -474,6 +475,7 @@ class _MyProfileState extends State<MyProfile> {
                         hintText: "account link",
                         hintStyle: TextStyle(
                           fontSize: 16,
+                          color: Colors.grey
                         ),
                         labelStyle:
                         TextStyle(color:themeNotifier.isDarkTheme ? Color(0xff00cfd8) : Color(0xff00a6b5),

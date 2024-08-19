@@ -131,6 +131,9 @@ class _HomePageState extends State<HomePage> {
                       decoration: InputDecoration(
                         hintText: "Search any query",
                         contentPadding:EdgeInsets.only(left:20,top: 18,bottom: 18,right: 10),
+                        hintStyle: TextStyle(
+                          color: Colors.grey
+                        ),
                         labelStyle: GoogleFonts.lato(
                             textStyle:TextStyle(
                               color: themeNotifier.isDarkTheme ? Color(0xff00cfd8) : Color(0xff00a6b5),
