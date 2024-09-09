@@ -117,7 +117,7 @@ class _CheckEmailVerificationPageState extends State<CheckEmailVerificationPage>
           "Email Verification",
           style: GoogleFonts.lato(
             textStyle: TextStyle(
-              color: themeNotifier.isDarkTheme ? Color(0xff00cfd8) : Color(0xff00a6b5),
+              color: themeNotifier.isDarkTheme ? Colors.white : Colors.black,
               fontSize: 22,
             ),
           ),

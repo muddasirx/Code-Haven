@@ -499,7 +499,6 @@ class _viewPostState extends State<viewPost> {
                 textStyle: TextStyle(
                   color: themeNotifier.isDarkTheme ? Color(0xff00cfd8) : Color(0xff00a6b5),
                   fontSize: 17,
-                  //fontWeight: FontWeight.bold
                 ),
               ),),
                 InkWell(
@@ -522,7 +521,6 @@ class _viewPostState extends State<viewPost> {
                       textStyle: TextStyle(
                         color: themeNotifier.isDarkTheme ? Colors.white : Colors.black,
                         fontSize: 16,
-                        //fontWeight: FontWeight.bold
                       ),
                     ),),
                 )
@@ -591,7 +589,7 @@ class _viewPostState extends State<viewPost> {
                             postData['title'],
                             style: GoogleFonts.lato(
                               textStyle: TextStyle(
-                                color: themeNotifier.isDarkTheme ? Colors.grey[300] : Colors.grey[700],
+                                color: themeNotifier.isDarkTheme ? Colors.grey[400] : Colors.grey[700],
                                 fontSize: 17,
                               ),
                             ),
@@ -620,7 +618,7 @@ class _viewPostState extends State<viewPost> {
                             postData['description'],
                             style: GoogleFonts.lato(
                               textStyle: TextStyle(
-                                color: themeNotifier.isDarkTheme ? Colors.grey[300] : Colors.grey[700],
+                                color: themeNotifier.isDarkTheme ? Colors.grey[400] : Colors.grey[700],
                                 fontSize: 17,
                               ),
                             ),
@@ -900,7 +898,7 @@ class _viewPostState extends State<viewPost> {
                                           comments[index]['comment'],
                                           style: GoogleFonts.lato(
                                             textStyle: TextStyle(
-                                              color: themeNotifier.isDarkTheme ? Colors.grey[400] : Colors.grey[600],
+                                              color: themeNotifier.isDarkTheme ? Colors.grey[400] : Colors.grey[700],
                                               fontSize: 15,
                                             ),
                                           ),
@@ -963,7 +961,7 @@ class _viewPostState extends State<viewPost> {
                                             "${comments[index]['numberOfLikes']}",
                                             style: GoogleFonts.lato(
                                               textStyle: TextStyle(
-                                                color: Colors.grey,
+                                                color: themeNotifier.isDarkTheme ? Colors.grey[400] : Colors.grey[700],
                                                 fontSize: 15,
                                               ),
                                             ),
@@ -1012,7 +1010,7 @@ class _viewPostState extends State<viewPost> {
                                         timeAgoSinceDate(comments[index]['time']),
                                         style: GoogleFonts.lato(
                                           textStyle: TextStyle(
-                                            color: Colors.grey,
+                                            color: themeNotifier.isDarkTheme ? Colors.grey[400] : Colors.grey[700],
                                             fontSize: 13,
                                           ),
                                         ),
@@ -1116,7 +1114,7 @@ class _viewPostState extends State<viewPost> {
                                                                         text: comments[index]['replies'][index2]['reply'], // The rest of the paragraph
                                                                         style: GoogleFonts.lato(
                                                                           textStyle: TextStyle(
-                                                                            color: themeNotifier.isDarkTheme ? Colors.grey[400] : Colors.grey[600],
+                                                                            color: themeNotifier.isDarkTheme ? Colors.grey[400] : Colors.grey[700],
                                                                             fontSize: 13,
                                                                           ),
                                                                         ),
@@ -1166,7 +1164,7 @@ class _viewPostState extends State<viewPost> {
                                                           timeAgoSinceDate(comments[index]['replies'][index2]['time']),
                                                           style: GoogleFonts.lato(
                                                             textStyle: TextStyle(
-                                                              color: Colors.grey,
+                                                              color: themeNotifier.isDarkTheme ? Colors.grey[400] : Colors.grey[700],
                                                               fontSize: 13,
                                                             ),
                                                           ),

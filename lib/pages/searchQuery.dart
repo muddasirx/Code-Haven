@@ -121,6 +121,9 @@ class _searchQueryState extends State<searchQuery> {
                     cursorColor: themeNotifier.isDarkTheme ? Color(0xff00cfd8) : Color(0xff00a6b5),
                     decoration: InputDecoration(
                         hintText: "Search any query",
+                        hintStyle: TextStyle(
+                            color: Colors.grey
+                        ),
                         contentPadding:EdgeInsets.only(left:20,top: 18,bottom: 18,right: 10),
                         labelStyle: GoogleFonts.lato(
                             textStyle:TextStyle(

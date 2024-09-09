@@ -198,10 +198,11 @@ class _NotificationsState extends State<Notifications> {
                                                 notifications[index]['notification'],
                                                 style: GoogleFonts.lato(
                                                   textStyle: TextStyle(
-                                                    color: themeNotifier.isDarkTheme ? Colors.grey[400] : Colors.grey[600],
+                                                    color: themeNotifier.isDarkTheme ? Colors.grey[400] : Colors.grey[700],
                                                     fontSize: 16,
                                                   ),
                                                 ),
+
                                                 softWrap: true,
                                               ),
                                             ),

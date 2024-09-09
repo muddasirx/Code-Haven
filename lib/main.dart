@@ -2,6 +2,7 @@ import 'package:code_haven/SplashScreen.dart';
 import 'package:code_haven/pages/NavBar.dart';
 import 'package:code_haven/pages/NavBar/HomePage.dart';
 import 'package:code_haven/pages/NavBar/postQuestion.dart';
+import 'package:code_haven/pages/SignUp/GoogleSignIn.dart';
 import 'package:code_haven/pages/SignUp/SignUp.dart';
 import 'package:code_haven/pages/interestPage.dart';
 import 'package:code_haven/pages/login/forgotPassword.dart';
@@ -60,7 +61,7 @@ class MyApp extends StatelessWidget {
                 "/AboutUs": (context)=>AboutUs(),
                 "/deleteAccount": (context)=>DeleteAccount(),
                 "/MyProfile": (context)=>MyProfile(),
-                "/ChangePassword": (context)=>ChangePassword(),
+                "/ChangePassword": (context)=>ChangePassword()
 
               },
             );

@@ -131,7 +131,7 @@ class _SignUpState extends State<SignUp> {
           "Create an Account",
           style: GoogleFonts.lato(
             textStyle: TextStyle(
-              color: themeNotifier.isDarkTheme ? Color(0xff00cfd8) : Color(0xff00a6b5),
+              color: themeNotifier.isDarkTheme ? Colors.white : Colors.black,
               fontSize: 22,
             ),
           ),

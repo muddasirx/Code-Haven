@@ -13,6 +13,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:animations/animations.dart';
 import '../../SplashScreen.dart';
+import '../SignUp/GoogleSignIn.dart';
 import '../SignUp/SignUp.dart';
 import '../interestPage.dart';
 
@@ -35,21 +36,28 @@ class _loginPageState extends State<loginPage> {
 
  //Functions
 
-  Future<User?> _signInWithGoogle() async {
-    final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
-    if (googleUser == null) {
-      // The user canceled the sign-in
-      return null;
+  void googleSignIn() async{
+    try{
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      if(googleUser == null){
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('Google Signin Failed!',style: TextStyle(
+              color: Colors.white
+          ),),backgroundColor: Colors.red,
+        ));
+      }else{
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => GoogleSignInPage(e:googleUser.email.toString(),n:googleUser.displayName.toString())),
+        );
+      }
+    }catch(e){
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Could\'nt Signin : ${e.toString()}',style: TextStyle(
+            color: Colors.white
+        ),),backgroundColor: Colors.red,
+      ));
     }
-
-    final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
-    final AuthCredential credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
-    );
-
-    final UserCredential userCredential = await _auth.signInWithCredential(credential);
-    return userCredential.user;
   }
 
   Future<void> checkConnection() async {
@@ -458,13 +466,8 @@ class _loginPageState extends State<loginPage> {
                         InkWell(
                           borderRadius: BorderRadius.circular(20),
                           onTap: () async {
-                            User? user = await _signInWithGoogle();
-                            if (user != null) {
-                              Navigator.pushNamed(context, "/Homepage");
-                              print('Successfully signed in with Google: ${user.email}');
-                            } else {
-                              print('Failed to sign in with Google');
-                            }
+                            googleSignIn();
+
                           },
                           child: Container(
                             height: 50,
